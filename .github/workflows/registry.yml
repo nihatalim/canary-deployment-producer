@@ -16,6 +16,6 @@ jobs:
           password: ${{ vars.REGISTRY_PASS }}
       - name: Build Image
         run: |
-          echo "${{ vars.REGISTRY_ADDRESS }}/${{ vars.REGISTRY_BUCKET }}/canary-deployment-producer:commitid"
-          echo "docker build -t ${{ vars.REGISTRY_ADDRESS }}/${{ vars.REGISTRY_BUCKET }}/canary-deployment-producer:commitid ."
+          echo "${{ vars.REGISTRY_ADDRESS }}/${{ vars.REGISTRY_BUCKET }}/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}"
+          docker build -t ${{ vars.REGISTRY_ADDRESS }}/${{ vars.REGISTRY_BUCKET }}/${{ github.repository }}:${{ steps.vars.outputs.sha_short }} .
           echo "env variable : ${{ toJson(env) }}"
