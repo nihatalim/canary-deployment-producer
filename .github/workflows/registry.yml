@@ -15,6 +15,9 @@ jobs:
           registry: ${{ vars.REGISTRY_ADDRESS }}
           username: ${{ vars.REGISTRY_USER }}
           password: ${{ vars.REGISTRY_PASS }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
       -
         name: Build Image
         uses: docker/build-push-action@v4
