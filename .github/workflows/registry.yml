@@ -12,6 +12,6 @@ jobs:
         name: Login to Registry
         uses: docker/login-action@v2
         with:
-          registry: ${{ env.REGISTRY_ADDRESS }}
-          username: ${{ env.REGISTRY_USER }}
-          password: ${{ env.REGISTRY_PASS }}
+          registry: ${{ env.nuc_cluster.REGISTRY_ADDRESS }}
+          username: ${{ env.nuc_cluster.REGISTRY_USER }}
+          password: ${{ env.nuc_cluster.REGISTRY_PASS }}
