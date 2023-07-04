@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Use variables
         run: |
-          echo "vars variable : ${{ vars }}"
+          echo "vars variable : ${{ toJson(vars) }}"
           echo "env variable : ${{ toJson(env) }}"
       - name: Login to Registry
         uses: docker/login-action@v2
