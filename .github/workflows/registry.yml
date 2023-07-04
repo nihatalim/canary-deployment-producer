@@ -12,6 +12,6 @@ jobs:
         name: Login to Registry
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.REGISTRY_ADDRESS }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASS }}
+          registry: ${{ vars.REGISTRY_ADDRESS }}
+          username: ${{ vars.REGISTRY_USER }}
+          password: ${{ vars.REGISTRY_PASS }}
